@@ -14,12 +14,13 @@ engine.process{
     column 2, 'duration'
 
     source('performanceData2012'){
-        localFile 'C:\\Users\\Sion\\IdeaProjects\\LogParserDSL\\log1.log'
-        localFile 'C:\\Users\\Sion\\IdeaProjects\\LogParserDSL\\log2.log'
+        localFile '../../../log1.log'
+        localFile '../../../log2.log'
+
     }
     source('performanceData2013'){
-        localFile 'C:\\Users\\Sion\\IdeaProjects\\LogParserDSL\\log3.log'
-        localFile 'C:\\Users\\Sion\\IdeaProjects\\LogParserDSL\\log4.log'
+        localFile '../../../log3.log'
+        localFile '../../../log4.log'
     }
     report('Duration'){
         avg 'duration'

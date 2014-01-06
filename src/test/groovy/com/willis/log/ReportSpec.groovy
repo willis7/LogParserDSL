@@ -30,4 +30,32 @@ class ReportSpec  extends Specification {
         myReport.sumColumns[0] == "columnOne"
         myReport.sumColumns[1] == "columnTwo"
     }
+
+    def "Adding a column to avgColumns array"(){
+        setup:
+        def myReport = new Report("myReportName")
+
+        when:
+        myReport.avg("columnOne")
+        myReport.avg("columnTwo")
+
+        then:
+        myReport.avgColumns.size() == 2
+        myReport.avgColumns[0] == "columnOne"
+        myReport.avgColumns[1] == "columnTwo"
+    }
+
+    def "Adding a column to groupByColumns array"(){
+        setup:
+        def myReport = new Report("myReportName")
+
+        when:
+        myReport.groupBy("columnOne")
+        myReport.groupBy("columnTwo")
+
+        then:
+        myReport.groupByColumns.size() == 2
+        myReport.groupByColumns[0] == "columnOne"
+        myReport.groupByColumns[1] == "columnTwo"
+    }
 }

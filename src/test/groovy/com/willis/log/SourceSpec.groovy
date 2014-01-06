@@ -15,4 +15,15 @@ class SourceSpec extends Specification {
         then:
         mySource.name == "mySourceName"
     }
+
+    def "Adding a new file to the Source files array"(){
+        setup:
+        def mySource = new Source("mySourceName")
+
+        when:
+        mySource.localFile("log1.log")
+
+        then:
+        mySource.files[0].isFile()
+    }
 }
